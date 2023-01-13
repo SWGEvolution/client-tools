@@ -3141,6 +3141,37 @@ bool CreatureObject::isAppearanceWearable(Object const &object, std::string *app
 			case SharedCreatureObjectTemplate::SP_bothan:      { column = 15; } break;
 			case SharedCreatureObjectTemplate::SP_ithorian:    { column = 17; } break;
 			case SharedCreatureObjectTemplate::SP_sullustan:   { column = 19; } break;
+			//adding additional species
+			case SharedCreatureObjectTemplate::SP_abyssin:     { column = 21; } break;
+			case SharedCreatureObjectTemplate::SP_aqualish:    { column = 23; } break;
+			case SharedCreatureObjectTemplate::SP_arcona:      { column = 25; } break;
+			case SharedCreatureObjectTemplate::SP_bith:  	   { column = 27; } break;
+			case SharedCreatureObjectTemplate::SP_cerean:      { column = 29; } break;
+			case SharedCreatureObjectTemplate::SP_chiss: 	   { column = 31; } break;
+			case SharedCreatureObjectTemplate::SP_devaronian:  { column = 33; } break;
+			case SharedCreatureObjectTemplate::SP_duros:       { column = 35; } break;
+			case SharedCreatureObjectTemplate::SP_gorax:       { column = 37; } break;
+			case SharedCreatureObjectTemplate::SP_gotal:  	   { column = 39; } break;
+			case SharedCreatureObjectTemplate::SP_gran:  	   { column = 41; } break;
+			case SharedCreatureObjectTemplate::SP_hutt:  	   { column = 43; } break;
+			case SharedCreatureObjectTemplate::SP_iktotchi:    { column = 45; } break;
+			case SharedCreatureObjectTemplate::SP_ishiTib:     { column = 47; } break;
+			case SharedCreatureObjectTemplate::SP_jenet:       { column = 49; } break;
+			case SharedCreatureObjectTemplate::SP_kadassa:     { column = 51; } break;
+			case SharedCreatureObjectTemplate::SP_kel_dor:     { column = 53; } break;
+			case SharedCreatureObjectTemplate::SP_klatooinian: { column = 55; } break;
+			case SharedCreatureObjectTemplate::SP_kubaz:       { column = 57; } break;
+			case SharedCreatureObjectTemplate::SP_marauder:    { column = 59; } break;
+			case SharedCreatureObjectTemplate::SP_nautolan:    { column = 61; } break;
+			case SharedCreatureObjectTemplate::SP_nightsister: { column = 63; } break;
+			case SharedCreatureObjectTemplate::SP_nikto:       { column = 65; } break;
+			case SharedCreatureObjectTemplate::SP_quarren:     { column = 67; } break;
+			case SharedCreatureObjectTemplate::SP_smc:    	   { column = 69; } break;
+			case SharedCreatureObjectTemplate::SP_talz:        { column = 71; } break;
+			case SharedCreatureObjectTemplate::SP_togruta:     { column = 73; } break;
+			case SharedCreatureObjectTemplate::SP_weequay:     { column = 75; } break;
+			//end of additional species
+
 		} //lint !e788 //enums not used
 
 		// Add in the gender index
@@ -4670,6 +4701,36 @@ void CreatureObject::checkWearing(Object **underWearObject, StringVector const &
 			case SharedCreatureObjectTemplate::SP_zabrak:
 			case SharedCreatureObjectTemplate::SP_ithorian:
 			case SharedCreatureObjectTemplate::SP_sullustan:
+			//add additional species
+			case SharedCreatureObjectTemplate::SP_abyssin:
+			case SharedCreatureObjectTemplate::SP_aqualish:
+			case SharedCreatureObjectTemplate::SP_arcona:
+			case SharedCreatureObjectTemplate::SP_bith:
+			case SharedCreatureObjectTemplate::SP_cerean:
+			case SharedCreatureObjectTemplate::SP_chiss:
+			case SharedCreatureObjectTemplate::SP_devaronian:
+			case SharedCreatureObjectTemplate::SP_duros:
+			case SharedCreatureObjectTemplate::SP_gorax:
+			case SharedCreatureObjectTemplate::SP_gotal:
+			case SharedCreatureObjectTemplate::SP_gran:
+			case SharedCreatureObjectTemplate::SP_hutt:
+			case SharedCreatureObjectTemplate::SP_iktotchi:
+			case SharedCreatureObjectTemplate::SP_ishiTib:
+			case SharedCreatureObjectTemplate::SP_jenet:
+			case SharedCreatureObjectTemplate::SP_kadassa:
+			case SharedCreatureObjectTemplate::SP_kel_dor:
+			case SharedCreatureObjectTemplate::SP_klatooinian:
+			case SharedCreatureObjectTemplate::SP_kubaz:
+			case SharedCreatureObjectTemplate::SP_marauder:
+			case SharedCreatureObjectTemplate::SP_nautolan:
+			case SharedCreatureObjectTemplate::SP_nightsister:
+			case SharedCreatureObjectTemplate::SP_nikto:
+			case SharedCreatureObjectTemplate::SP_quarren:
+			case SharedCreatureObjectTemplate::SP_smc:
+			case SharedCreatureObjectTemplate::SP_talz:
+			case SharedCreatureObjectTemplate::SP_togruta:
+			case SharedCreatureObjectTemplate::SP_weequay:
+			//end additional species
 				{
 					// Make sure this is a player (or hologram of a player) and not an npc
 					if (strstr(getObjectTemplate()->getName(), "player") != 0

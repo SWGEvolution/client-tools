@@ -261,6 +261,20 @@ namespace SpeciesNamespace
 		MAKE_NAME(maulProbeDroid);
 		MAKE_NAME(atst);
 		MAKE_NAME(atat);
+		//add additional species
+		MAKE_NAME(chiss);
+		MAKE_NAME(nautolan);
+		MAKE_NAME(nightsister);
+		MAKE_NAME(smc);
+		MAKE_NAME(togruta);
+		MAKE_NAME(cerean);
+		MAKE_NAME(kel_dor);
+		MAKE_NAME(jenet);
+		MAKE_NAME(kadassa);
+		MAKE_NAME(neimoidian);
+		MAKE_NAME(ugnaught);
+		MAKE_NAME(iktotchi);
+		//end additional species
 
 #undef MAKE_NAME
 

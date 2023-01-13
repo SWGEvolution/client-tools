@@ -372,10 +372,20 @@ SwgCuiAvatarSimple::SwgCuiAvatarSimple(UIPage & page)
 , m_p2speciesDescription(0)
 , m_p2speciesName(0)
 , m_surnameVisible(0)
+//modified for additional species
 , m_species1_male(0)
 , m_species2_male(0)
+, m_species3_male(0)
+, m_species4_male(0)
+, m_species5_male(0)
+, m_species6_male(0)
 , m_species1_female(0)
 , m_species2_female(0)
+, m_species3_female(0)
+, m_species4_female(0)
+, m_species5_female(0)
+, m_species6_female(0)
+//modified for additional species
 , m_hiddenAvatarList(0)
 , m_viewer(0)
 , m_callback(new MessageDispatch::Callback)
@@ -448,10 +458,20 @@ SwgCuiAvatarSimple::SwgCuiAvatarSimple(UIPage & page)
 	getCodeDataObject(TUIText, m_p2speciesName, "p2speciesName");
 	getCodeDataObject(TUIPage, m_surnameVisible, "surnameVisible");
 	getCodeDataObject(TUIList, m_hiddenAvatarList, "hiddenAvatarList");
+	//modified for additional species
 	getCodeDataObject(TUIComposite, m_species1_male, "species1_male");
 	getCodeDataObject(TUIComposite, m_species2_male, "species2_male");
+	getCodeDataObject(TUIComposite, m_species3_male, "species3_male");
+	getCodeDataObject(TUIComposite, m_species4_male, "species4_male");
+	getCodeDataObject(TUIComposite, m_species5_male, "species5_male");
+	getCodeDataObject(TUIComposite, m_species6_male, "species6_male");
 	getCodeDataObject(TUIComposite, m_species1_female, "species1_female");
 	getCodeDataObject(TUIComposite, m_species2_female, "species2_female");
+	getCodeDataObject(TUIComposite, m_species3_female, "species3_female");
+	getCodeDataObject(TUIComposite, m_species4_female, "species4_female");
+	getCodeDataObject(TUIComposite, m_species5_female, "species5_female");
+	getCodeDataObject(TUIComposite, m_species6_female, "species6_female");
+	//modified for additional species
 
 	{
 		UIWidget * widget = 0;
@@ -484,10 +504,20 @@ SwgCuiAvatarSimple::SwgCuiAvatarSimple(UIPage & page)
 	registerMediatorObject(*m_p2speciesName, true);
 	registerMediatorObject(*m_surnameVisible, true);
 	registerMediatorObject(*m_hiddenAvatarList, true);
+	//modified for additional species
 	registerMediatorObject(*m_species1_male, true);
 	registerMediatorObject(*m_species2_male, true);
+	registerMediatorObject(*m_species3_male, true);
+	registerMediatorObject(*m_species4_male, true);
+	registerMediatorObject(*m_species5_male, true);
+	registerMediatorObject(*m_species6_male, true);
 	registerMediatorObject(*m_species1_female, true);
 	registerMediatorObject(*m_species2_female, true);
+	registerMediatorObject(*m_species3_female, true);
+	registerMediatorObject(*m_species4_female, true);
+	registerMediatorObject(*m_species5_female, true);
+	registerMediatorObject(*m_species6_female, true);
+	//modified for additional species
 
 	m_boxObject = new Object();
 	Appearance * const appearance = new Appearance(0);
@@ -567,10 +597,20 @@ SwgCuiAvatarSimple::~SwgCuiAvatarSimple()
 	m_p2speciesDescription = 0;
 	m_p2speciesName = 0;
 	m_surnameVisible = 0;
+	//modified for additional species
 	m_species1_male = 0;
 	m_species2_male = 0;
+	m_species3_male = 0;
+	m_species4_male = 0;
+	m_species5_male = 0;
+	m_species6_male = 0;
 	m_species1_female = 0;
 	m_species2_female = 0;
+	m_species3_female = 0;
+	m_species4_female = 0;
+	m_species5_female = 0;
+	m_species6_female = 0;
+	//modified for additional species
 
 	delete m_callback;
 	m_callback = 0;
@@ -623,7 +663,7 @@ void SwgCuiAvatarSimple::performActivate()
 
 	SwgCuiAvatarCreationHelper::setCreatingJedi(false);
 
-	m_hiddenAvatarList->SelectRow(0);
+	m_hiddenAvatarList->SelectRow(34);
 
 	bool const creatingFirstCharacter = SwgCuiAvatarCreationHelper::getCreature() == 0;
 
@@ -743,6 +783,8 @@ void SwgCuiAvatarSimple::OnButtonPressed(UIWidget * const context)
 	{
 		if (m_gender != G_Male)
 		{
+			//added to prevent client crash when selecting a species that does not have both genders
+			m_hiddenAvatarList->SelectRow(34);
 			selectGender(G_Male);
 		}
 	}
@@ -750,6 +792,8 @@ void SwgCuiAvatarSimple::OnButtonPressed(UIWidget * const context)
 	{
 		if (m_gender != G_Female)
 		{
+			//added to prevent client crash when selecting a species that does not have both genders
+			m_hiddenAvatarList->SelectRow(34);
 			selectGender(G_Female);
 		}
 	}
@@ -770,6 +814,8 @@ void SwgCuiAvatarSimple::OnButtonPressed(UIWidget * const context)
 	}
 	else if ((context == m_buttonGenderNext) || (context == m_buttonGenderPrev))
 	{
+		//added to prevent client crash when selecting a species that does not have both genders
+		m_hiddenAvatarList->SelectRow(34);
 		// we only have 2 genders so both buttons do the same thing
 		int nextGender = static_cast<int>(m_gender) + 1;
 		nextGender %= static_cast<int>(G_numberOfGenders);
@@ -1190,13 +1236,23 @@ void SwgCuiAvatarSimple::updateAvatarSelection()
 	bool const isMale = m_gender == G_Male;
 	bool const isFemale = m_gender == G_Female;
 
+	//modified for additional species
 	m_textMale->SetVisible(isMale);
 	m_species1_male->SetVisible(isMale);
 	m_species2_male->SetVisible(isMale);
+	m_species3_male->SetVisible(isMale);
+	m_species4_male->SetVisible(isMale);
+	m_species5_male->SetVisible(isMale);
+	m_species6_male->SetVisible(isMale);
 
 	m_textFemale->SetVisible(isFemale);
 	m_species1_female->SetVisible(isFemale);
 	m_species2_female->SetVisible(isFemale);
+	m_species3_female->SetVisible(isFemale);
+	m_species4_female->SetVisible(isFemale);
+	m_species5_female->SetVisible(isFemale);
+	m_species6_female->SetVisible(isFemale);
+	//modified for additional species
 
 	if (isMale)
 	{

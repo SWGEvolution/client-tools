@@ -134,10 +134,20 @@ private:
 	UIText * m_p2speciesDescription;
 	UIText * m_p2speciesName;
 	UIPage * m_surnameVisible;
+	//modified for additional species
 	UIComposite * m_species1_male;
 	UIComposite * m_species2_male;
+	UIComposite * m_species3_male;
+	UIComposite * m_species4_male;
+	UIComposite * m_species5_male;
+	UIComposite * m_species6_male;
 	UIComposite * m_species1_female;
 	UIComposite * m_species2_female;
+	UIComposite * m_species3_female;
+	UIComposite * m_species4_female;
+	UIComposite * m_species5_female;
+	UIComposite * m_species6_female;
+	//modified for additional species
 
 	UIList * m_hiddenAvatarList;
 
