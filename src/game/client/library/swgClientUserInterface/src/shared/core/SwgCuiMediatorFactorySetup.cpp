@@ -122,6 +122,7 @@
 #include "swgClientUserInterface/SwgCuiSpaceGroupLaunch.h"
 #include "swgClientUserInterface/SwgCuiSpaceMiningSale.h"
 #include "swgClientUserInterface/SwgCuiSpaceZoneMap.h"
+#include "swgClientUserInterface/SwgCuiSpeciesSelection.h"
 #include "swgClientUserInterface/SwgCuiSplash.h"
 #include "swgClientUserInterface/SwgCuiStructurePlacement.h"
 #include "swgClientUserInterface/SwgCuiTcgWindow.h"
@@ -212,6 +213,7 @@ void SwgCuiMediatorFactorySetup::install ()
 	MAKE_SWG_CTOR (SceneSelection,                    "/SceneSel");
 	MAKE_SWG_CTOR (ServerDisconnected,                "/Debug.ServerDisconnected");
 	MAKE_SWG_CTOR (IMEInput,                          "/Debug.IME");
+	MAKE_SWG_CTOR (SpeciesSelection,        	  "/SpecSel");
 	MAKE_SWG_CTOR (Splash,                            "/Splash");
 	MAKE_SWG_CTOR (StructurePlacement,                "/Placement");
 	MAKE_SWG_CTOR_WS (Vendor,                         "/Auction.AuctionList");
