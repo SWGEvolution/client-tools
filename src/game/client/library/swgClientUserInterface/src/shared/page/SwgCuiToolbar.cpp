@@ -126,7 +126,7 @@ namespace SwgCuiToolbarNamespace
 	};
 	
 	const int DEFAULT_PANE_COUNT          = 6;
-	const int DEFAULT_ITEM_COUNT_PER_PANE = 24;
+	const int DEFAULT_ITEM_COUNT_PER_PANE = 36;
 	const size_t COMBAT_PANE_INDEX = 0;
 
 	const std::string cms_newbieTutorialRequestEquipToolbar ("equipToolbar");
@@ -351,18 +351,30 @@ public:
 		else if (id == CuiActions::toolbarSlot09) m_toolbar->setDefaultAction(9);
 		else if (id == CuiActions::toolbarSlot10) m_toolbar->setDefaultAction(10);
 		else if (id == CuiActions::toolbarSlot11) m_toolbar->setDefaultAction(11);
-		else if (id == CuiActions::toolbarSlot12 || id == CuiActions::toolbarBank2Slot00) m_toolbar->setDefaultAction(12);
-		else if (id == CuiActions::toolbarSlot13 || id == CuiActions::toolbarBank2Slot01) m_toolbar->setDefaultAction(13);
-		else if (id == CuiActions::toolbarSlot14 || id == CuiActions::toolbarBank2Slot02) m_toolbar->setDefaultAction(14);
-		else if (id == CuiActions::toolbarSlot15 || id == CuiActions::toolbarBank2Slot03) m_toolbar->setDefaultAction(15);
-		else if (id == CuiActions::toolbarSlot16 || id == CuiActions::toolbarBank2Slot04) m_toolbar->setDefaultAction(16);
-		else if (id == CuiActions::toolbarSlot17 || id == CuiActions::toolbarBank2Slot05) m_toolbar->setDefaultAction(17);
-		else if (id == CuiActions::toolbarSlot18 || id == CuiActions::toolbarBank2Slot06) m_toolbar->setDefaultAction(18);
-		else if (id == CuiActions::toolbarSlot19 || id == CuiActions::toolbarBank2Slot07) m_toolbar->setDefaultAction(19);
-		else if (id == CuiActions::toolbarSlot20 || id == CuiActions::toolbarBank2Slot08) m_toolbar->setDefaultAction(20);
-		else if (id == CuiActions::toolbarSlot21 || id == CuiActions::toolbarBank2Slot09) m_toolbar->setDefaultAction(21);
-		else if (id == CuiActions::toolbarSlot22 || id == CuiActions::toolbarBank2Slot10) m_toolbar->setDefaultAction(22);
-		else if (id == CuiActions::toolbarSlot23 || id == CuiActions::toolbarBank2Slot11) m_toolbar->setDefaultAction(23);
+		else if (id == CuiActions::toolbarSlot12) m_toolbar->setDefaultAction(12);
+		else if (id == CuiActions::toolbarSlot13) m_toolbar->setDefaultAction(13);
+		else if (id == CuiActions::toolbarSlot14) m_toolbar->setDefaultAction(14);
+		else if (id == CuiActions::toolbarSlot15) m_toolbar->setDefaultAction(15);
+		else if (id == CuiActions::toolbarSlot16) m_toolbar->setDefaultAction(16);
+		else if (id == CuiActions::toolbarSlot17) m_toolbar->setDefaultAction(17);
+		else if (id == CuiActions::toolbarSlot18) m_toolbar->setDefaultAction(18);
+		else if (id == CuiActions::toolbarSlot19) m_toolbar->setDefaultAction(19);
+		else if (id == CuiActions::toolbarSlot20) m_toolbar->setDefaultAction(20);
+		else if (id == CuiActions::toolbarSlot21) m_toolbar->setDefaultAction(21);
+		else if (id == CuiActions::toolbarSlot22) m_toolbar->setDefaultAction(22);
+		else if (id == CuiActions::toolbarSlot23) m_toolbar->setDefaultAction(23);
+		else if (id == CuiActions::toolbarSlot24 || id == CuiActions::toolbarBank2Slot00) m_toolbar->setDefaultAction(24);
+		else if (id == CuiActions::toolbarSlot25 || id == CuiActions::toolbarBank2Slot01) m_toolbar->setDefaultAction(25);
+		else if (id == CuiActions::toolbarSlot26 || id == CuiActions::toolbarBank2Slot02) m_toolbar->setDefaultAction(26);
+		else if (id == CuiActions::toolbarSlot27 || id == CuiActions::toolbarBank2Slot03) m_toolbar->setDefaultAction(27);
+		else if (id == CuiActions::toolbarSlot28 || id == CuiActions::toolbarBank2Slot04) m_toolbar->setDefaultAction(28);
+		else if (id == CuiActions::toolbarSlot29 || id == CuiActions::toolbarBank2Slot05) m_toolbar->setDefaultAction(29);
+		else if (id == CuiActions::toolbarSlot30 || id == CuiActions::toolbarBank2Slot06) m_toolbar->setDefaultAction(30);
+		else if (id == CuiActions::toolbarSlot31 || id == CuiActions::toolbarBank2Slot07) m_toolbar->setDefaultAction(31);
+		else if (id == CuiActions::toolbarSlot32 || id == CuiActions::toolbarBank2Slot08) m_toolbar->setDefaultAction(32);
+		else if (id == CuiActions::toolbarSlot33 || id == CuiActions::toolbarBank2Slot09) m_toolbar->setDefaultAction(33);
+		else if (id == CuiActions::toolbarSlot34 || id == CuiActions::toolbarBank2Slot10) m_toolbar->setDefaultAction(34);
+		else if (id == CuiActions::toolbarSlot35 || id == CuiActions::toolbarBank2Slot11) m_toolbar->setDefaultAction(35);
 		else if ((id == CuiActions::petToolbarSlot0) && m_toolbar->m_petVolumePage && m_toolbar->m_petVolumePage->IsVisible()) m_toolbar->performToolbarAction(0, true);
 		else if ((id == CuiActions::petToolbarSlot1) && m_toolbar->m_petVolumePage && m_toolbar->m_petVolumePage->IsVisible()) m_toolbar->performToolbarAction(1, true);
 		else if ((id == CuiActions::petToolbarSlot2) && m_toolbar->m_petVolumePage && m_toolbar->m_petVolumePage->IsVisible()) m_toolbar->performToolbarAction(2, true);
@@ -1354,7 +1366,7 @@ UIText* SwgCuiToolbar::getToolbarCooldownTimer(int slot, const bool pet)
 {
 	if(pet)
 	{
-		slot += MAX_PET_TOOLBAR_BUTTONS + 1;
+		//slot += MAX_PET_TOOLBAR_BUTTONS + 1;
 	}
 	else
 	{
@@ -2728,7 +2740,7 @@ void SwgCuiToolbar::update (float deltaTimeSecs)
 						// SWG Source Addition - 2021
 						// Authors: Aconite
 						// *******************************************************
-						UIText* const cooldownTimer = getToolbarCooldownTimer(slot);
+						UIText* const cooldownTimer = getToolbarCooldownTimer(slot, pet);
 						// If cooldown active and this command isn't executing/warming up
 						if (timerFactor > 0.0f && !executing && !warmingUp)
 						{
@@ -4822,6 +4834,18 @@ void SwgCuiToolbar::startProcessingActions()
 	CuiActionManager::addAction (CuiActions::toolbarSlot21,        m_action, false);
 	CuiActionManager::addAction (CuiActions::toolbarSlot22,        m_action, false);
 	CuiActionManager::addAction (CuiActions::toolbarSlot23,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot24,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot25,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot26,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot27,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot28,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot29,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot30,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot31,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot32,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot33,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot34,        m_action, false);
+	CuiActionManager::addAction (CuiActions::toolbarSlot35,        m_action, false);
 	CuiActionManager::addAction (CuiActions::toolbarBank2Slot00,   m_action, false);
 	CuiActionManager::addAction (CuiActions::toolbarBank2Slot01,   m_action, false);
 	CuiActionManager::addAction (CuiActions::toolbarBank2Slot02,   m_action, false);
